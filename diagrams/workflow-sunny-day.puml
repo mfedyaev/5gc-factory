@@ -1,0 +1,49 @@
+@startuml
+!theme blueprint
+title 5GNF factory, sunny day
+
+actor Engineer
+participant Workflow
+participant "extract_docx" as Docx
+participant "LLM Select" as Select
+participant "LLM Analyst" as Analyst
+participant "LLM Developer" as Developer
+participant "LLM Tester" as Tester
+participant "Hurl gate" as Gate
+
+Engineer -> Workflow: run --nf
+Workflow -> Docx: outline
+Docx --> Workflow: extracts/{nf}-outline.md
+Workflow -> Engineer: HITL outline
+Engineer --> Workflow: approve
+
+Workflow -> Select: scope clarifications, outline
+Select --> Workflow: extracts/{nf}-keep.txt
+Workflow -> Engineer: HITL clause list
+Engineer --> Workflow: approve
+
+Workflow -> Docx: export --keep
+Docx --> Workflow: extracts/{nf}-slice.md
+Workflow -> Engineer: HITL slice
+Engineer --> Workflow: approve
+
+Workflow -> Analyst: slice, clarifications, OpenAPI
+Analyst --> Workflow: specs/{nf}-spec.md
+Workflow -> Engineer: HITL spec
+Engineer --> Workflow: approve
+
+Workflow -> Developer: spec, OpenAPI
+Developer --> Workflow: {nf}/{nf}.go
+Workflow -> Engineer: HITL Go
+Engineer --> Workflow: approve
+
+Workflow -> Tester: spec, clarifications, OpenAPI
+Tester --> Workflow: {nf}/test-{nf}.hurl
+Workflow -> Engineer: HITL Hurl
+Engineer --> Workflow: approve
+
+Workflow -> Gate: go build, start, hurl --test, stop
+Gate --> Workflow: tests passed
+Workflow -> Engineer: HITL gate log
+Engineer --> Workflow: approve
+@enduml

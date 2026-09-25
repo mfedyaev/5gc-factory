@@ -1,0 +1,38 @@
+@startuml
+skinparam shadowing false
+skinparam ArrowColor #333333
+skinparam activity {
+  BackgroundColor #f7f7f4
+  BorderColor #333333
+  DiamondBackgroundColor #fff4e5
+}
+
+title 5GC factory SDLC: corpus in, limited NFs out
+
+start
+
+:1 Freeze scope\nNFs: NRF, AUSF, UDM, UDR\nC1 register and discover\nC2 5G AKA and UE registration\nout of scope written;
+
+:2 Ingest\nOpenAPI YAML is the oracle\nnamed DOCX clauses only\nextracts then prompts\nnever the whole Rel 18;
+
+while (7 Next NF to build?) is (yes)
+  :this NF is NRF, then AUSF, UDM, UDR\ndiscovery between NFs only after\nNRF register and discover works;
+  :3 Ollama writes development spec\nprocess, APIs, fields, out of scope;
+  :HITL approve or edit spec;
+  :4 Ollama draws diagrams\nsequence or C4 for this NF only;
+  :HITL approve diagram;
+  :5 Ollama writes Go\nlisten and GET health\nthen 3GPP ops on the same binary;
+  :6 CI gate\ngo test, curl health, curl the ops;
+endwhile (no)
+
+:8 Factory workflow\nautomate steps 2 to 6\nnot before 3 to 6 worked by hand;
+
+stop
+
+legend
+  Local LLM = Ollama. Human after every step.
+  Sunny-day only: no heartbeat, TLS, PDU sessions.
+  No LangGraph / orchestrator until step 8.
+endlegend
+
+@enduml

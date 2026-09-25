@@ -1,0 +1,47 @@
+# Python
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Go
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+nrf/nrf
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# OS and editors
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs and local backups
+*.log
+*.bak
+*.bak[0-9]
+*.tmp
+
+# Pinned 3GPP zips, docx, and PDFs. Too large for context.
+corpus/

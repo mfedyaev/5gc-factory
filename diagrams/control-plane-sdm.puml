@@ -1,0 +1,30 @@
+@startuml
+title Control Plane SDM
+
+actor User
+actor "AMF Sim" as Amf
+
+package "Control Plane SDM" {
+  component NRF
+  database "MongoDB\nNetwork Functions" as NfStore
+  component AUSF
+  database Redis as AusfStore
+  component UDM
+  database Keys as KeyStore
+  component UDR
+  database "MongoDB\nSubscriber Data" as SubStore
+}
+
+NRF --> NfStore
+AUSF --> AusfStore
+UDM --> KeyStore
+UDR --> SubStore
+
+Amf --> NRF : NF discovery
+Amf --> AUSF : UE authentication
+Amf --> UDM : UE registration
+User --> UDM : UE provisioning
+
+AUSF --> UDM : authentication data
+UDM --> UDR : subscription data
+@enduml

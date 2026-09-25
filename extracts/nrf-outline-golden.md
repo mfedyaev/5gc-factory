@@ -1,0 +1,85 @@
+# 29510-ib0 — heading outline
+
+Derived from `29510-ib0.docx`. Open in an editor; do not open the DOCX in Word.
+
+- Foreword
+- 1Scope
+- 2References
+- 3Definitions and abbreviations
+  - 3.1 Definitions
+  - 3.2 Abbreviations
+- 4Overview
+- 5Services Offered by the NRF
+  - 5.1 Introduction
+  - 5.2 Nnrf_NFManagement Service
+    - 5.2.1 Service Description
+    - 5.2.2 Service Operations
+      - 5.2.2.1 Introduction
+      - 5.2.2.2 NFRegister
+        - 5.2.2.2.1 General
+        - 5.2.2.2.2 NF (other than NRF) registration to NRF
+        - 5.2.2.2.3 NRF registration to another NRF
+        - 5.2.2.2.4 Shared Data registration to NRF
+      - 5.2.2.3 NFUpdate
+        - 5.2.2.3.1 General
+        - 5.2.2.3.1 ANF Profile Complete replacement
+        - 5.2.2.3.1 BNF Profile Partial Update
+        - 5.2.2.3.1 CShared Data Complete replacement
+        - 5.2.2.3.1 DShared data Partial Update
+        - 5.2.2.3.2 NF Heart-Beat
+      - 5.2.2.4 NFDeregister
+        - 5.2.2.4.1 General
+        - 5.2.2.4.2 NF Instance Deregistration
+        - 5.2.2.4.3 Shared Data Deregistration
+      - 5.2.2.5 NFStatusSubscribe
+        - 5.2.2.5.1 General
+        - 5.2.2.5.2 Subscription to NF Instances in the same PLMN
+        - 5.2.2.5.3 Subscription to NF Instances in a different PLMN
+        - 5.2.2.5.4 Subscription to NF Instances with intermediate forwarding NRF
+        - 5.2.2.5.5 Subscription to NF Instances with intermediate redirecting NRF
+        - 5.2.2.5.6 Update of Subscription to NF Instances
+        - 5.2.2.5.7 Update of Subscription to NF Instances in a different PLMN
+      - 5.2.2.6 NFStatusNotify
+        - 5.2.2.6.1 General
+        - 5.2.2.6.2 Notification from NRF in the same PLMN
+        - 5.2.2.6.3 Notification from NRF in a different PLMN
+        - 5.2.2.6.4 Notification for subscription via intermediate NRF
+      - 5.2.2.7 NFStatusUnSubscribe
+        - 5.2.2.7.1 General
+        - 5.2.2.7.2 Subscription removal in the same PLMN
+        - 5.2.2.7.3 Subscription removal in a different PLMN
+      - 5.2.2.8 NFListRetrieval
+        - 5.2.2.8.1 General
+      - 5.2.2.9 NFProfileRetrieval
+        - 5.2.2.9.1 General
+      - 5.2.2.10 SharedDataRetrieval
+      - 5.2.2.11 SharedDataListRetrieval
+  - 5.3 Nnrf_NFDiscovery Service
+    - 5.3.1 Service Description
+    - 5.3.2 Service Operations
+      - 5.3.2.1 Introduction
+      - 5.3.2.2 NFDiscover
+        - 5.3.2.2.1 General
+        - 5.3.2.2.2 Service Discovery in the same PLMN
+        - 5.3.2.2.3 Service Discovery in a different PLMN
+        - 5.3.2.2.4 Service Discovery with intermediate redirecting NRF
+        - 5.3.2.2.5 Service Discovery with intermediate forwarding NRF
+        - 5.3.2.2.6 Service Discovery with resolution of the target PLMN
+      - 5.3.2.3 SCPDomainRoutingInfoGet
+      - 5.3.2.4 SCPDomainRoutingInfoSubscribe
+      - 5.3.2.5 SCPDomainRoutingInfoNotify
+      - 5.3.2.6 SCPDomainRoutingInfoUnSubscribe
+  - 5.4 Nnrf_AccessToken Service
+    - 5.4.1 Service Description
+    - 5.4.2 Service Operations
+      - 5.4.2.1 Introduction
+      - 5.4.2.2 Get (Access Token Request)
+        - 5.4.2.2.1 General
+        - 5.4.2.2.2 Access Token request with intermediate forwarding NRF
+        - 5.4.2.2.3 Access Token request with intermediate redirecting NRF
+  - 5.5 Nnrf_Bootstrapping Service
+    - 5.5.1 Service Description
+    - 5.5.2 Service Operations
+      - 5.5.2.1 Introduction
+      - 5.5.2.2 Get
+        - 5.5.2.2.1 General
