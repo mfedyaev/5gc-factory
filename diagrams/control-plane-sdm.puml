@@ -1,4 +1,5 @@
 @startuml
+!theme blueprint
 title Control Plane SDM
 
 actor User

@@ -13,5 +13,4 @@
   - RegisterNFInstance: PUT is both registration (NF is not in store, HTTP 201) and update (NF was in store, HTTP 200)
   - SearchNFInstances: target-nf-type selects nfType. requester-nf-type must be a valid NFType and does not select nfType.
   - SearchNFInstances: SearchResult contains full NFProfile objects
-  - No fqdn length check
 

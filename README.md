@@ -4,6 +4,8 @@ This repo shows an LLM inside a development process. A LangGraph workflow builds
 
 The first curated set is `nrf` - Network Repository Function, responsible for registration and discovery of othe Network Functions. The same workflow takes the next Network Function in development when new files are added with the same name structure.
 
+All LLM calls are observed with LangFuse.
+
 ## Sunny day
 
 The sequence is [diagrams/workflow-sunny-day.puml](diagrams/workflow-sunny-day.puml). In this scenario, every stage succeeds and every reply is approve.
@@ -57,9 +59,18 @@ These are not in the workflow yet.
 - A Developer-fix role.
 - Hurl reports converted into Developer-fix instructions.
 
+
+
 ## Known limitations
 
 - Local models run with a small context and lower quantization. A long extract can truncate the completion.
 - Generated Go can leave unused imports.
 - The same inputs can produce different code style.
 
+
+
+## Control plane
+
+[diagrams/control-plane-sdm.puml](diagrams/control-plane-sdm.puml) is the Control Plane SDM: NRF, AUSF, UDM, and UDR. AMF Sim uses it for NF discovery, UE authentication, and UE registration. The user uses it for UE provisioning.
+
+![Control Plane SDM](diagrams/control-plane-sdm.png)
