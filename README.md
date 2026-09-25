@@ -50,6 +50,25 @@ On a terminal, `run` asks for the next action at each pause. `resume` applies on
 
 Langfuse tracing starts when `LANGFUSE_PUBLIC_KEY`, `LANGFUSE_SECRET_KEY`, and either `LANGFUSE_HOST` or `LANGFUSE_BASE_URL` are set. That URL is the web service. One thread is one session.
 
+## 12-factor agents
+
+From [12-factor agents](https://github.com/humanlayer/12-factor-agents).
+
+Done:
+
+- **Own your prompts.** Role prompts live in [prompts/](prompts/) and carry no network-function name.
+- **Own your context window.** Each call receives only its own files.
+- **Launch, pause, resume.** After every stage the run pauses. `approve`, `rerun`, and `goto` continue it.
+- **Own your control flow.** The stage order is Python: outline, select, export, analyst, developer, tester, gate.
+- **Small, focused agents.** Select, Analyst, Developer, and Tester each have one prompt and one set of inputs.
+
+Partial:
+
+- **Natural language to tool calls.** The model writes a file. The next stage reads that file.
+- **Unify execution state and business state.** The artifacts are the files on disk. The pause is a SQLite checkpoint.
+- **Contact humans with tool calls.** Every stage pauses for a person. The graph inserts that pause.
+- **Stateless reducer.** Each model call is one completion. The thread keeps the stage it paused on.
+
 ## Phase 2
 
 These are not in the workflow yet.
@@ -66,6 +85,9 @@ These are not in the workflow yet.
 - Local models run with a small context and lower quantization. A long extract can truncate the completion.
 - Generated Go can leave unused imports.
 - The same inputs can produce different code style.
+- **Tools are just structured outputs.** The model returns prose and source files. A tool call has no JSON schema.
+- **Compact errors into the context window.** Build and Hurl failures stay in `{nf}/test-log.txt`. They are not sent back to the Developer.
+- **Trigger from anywhere.** A run starts from the terminal.
 
 
 
