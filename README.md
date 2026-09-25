@@ -44,6 +44,7 @@ On a terminal, `run` asks for the next action at each pause. `resume` applies on
 - [extracts/](extracts/) are the curated inputs.
 - [scripts/extract_docx.py](scripts/extract_docx.py) turns a DOCX into Markdown.
 - [workflow/](workflow/) is the graph.
+- [docs/adr/](docs/adr/) records Python for the workflow, Go for a network function, and MongoDB as the PoC store.
 - [archive/](archive/) holds the earlier one-shot scripts.
 
 `corpus/` is the local DOCX and is gitignored. So are the full text dumps of the specifications.
